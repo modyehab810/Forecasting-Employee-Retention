@@ -176,6 +176,7 @@ time_spend_company
 
     with st.sidebar:
         st.title(":green[Forecasting] Employee Retention")
+        st.image("imgs/division.png", caption="", width=60)
         page = option_menu(
             menu_title=None,
             options=['Home', 'Vizualizations',
