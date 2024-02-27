@@ -16,6 +16,11 @@ from streamlit.components.v1 import html
 from streamlit_option_menu import option_menu
 import warnings
 
+import warnings
+
+pd.set_option('future.no_silent_downcasting', True)
+pd.options.mode.copy_on_write = "warn"
+
 
 def run():
     st.set_page_config(
@@ -42,12 +47,12 @@ def run():
 
     # Function To Load Our Dataset
     @st.cache_data
-    def load_model(model_path):
+    def load_the_model(model_path):
         return pd.read_pickle(model_path)
-
+        
     df = load_data("HR_comma_sep.csv")
 
-    model = load_model("random_forest_employee_retention_v1.pkl")
+    model = load_the_model("random_forest_employee_retention_v1.pkl")
 
     # Function To Valid Input Data
     @st.cache_data
@@ -176,7 +181,7 @@ time_spend_company
 
     with st.sidebar:
         st.title(":green[Forecasting] Employee Retention")
-        st.image("imgs/division.png", caption="", width=60)
+        st.image("imgs/division.png", caption="", width=90)
         page = option_menu(
             menu_title=None,
             options=['Home', 'Vizualizations',
