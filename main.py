@@ -16,11 +16,6 @@ from streamlit.components.v1 import html
 from streamlit_option_menu import option_menu
 import warnings
 
-import warnings
-
-pd.set_option('future.no_silent_downcasting', True)
-pd.options.mode.copy_on_write = "warn"
-
 
 def run():
     st.set_page_config(
@@ -48,7 +43,7 @@ def run():
     # Function To Load Our Dataset
     @st.cache_data
     def load_the_model(model_path):
-        return pd.read_pickle(model_path)
+        return pd.read_pickle(model_path, compression='infer')
         
     df = load_data("HR_comma_sep.csv")
 
