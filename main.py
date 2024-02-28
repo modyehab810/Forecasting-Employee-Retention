@@ -296,9 +296,7 @@ time_spend_company
                                     satisfaction_level, last_evaluation, avg_monthly_hours, time_in_company]
 
                                 new_data.extend(salary)
-                                st.info(new_data)
                                 predicted_value = model.predict([new_data])[0]
-                                st.info(predicted_value)
                                 sleep(1.2)
                                 prediction_prop = np.round(
                                     model.predict_proba([new_data])*100)
