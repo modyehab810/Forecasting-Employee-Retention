@@ -66,7 +66,7 @@ def bar_plot(the_df, column, orientation="v", top_10=False):
             "family": "consolas",
             "color": "#000"
         },
-        hovertemplate="X Axis: %{y}<br>Y Axis: %{x:0.1f}%",
+        hovertemplate="X Axis: %{x}<br>Y Axis: %{y:0.1f}%",
     )
 
     if orientation == "h":
@@ -120,7 +120,7 @@ def pie_chart(the_df, column):
             "family": "arial",
             "color": "#fff"
         },
-        hovertemplate="Label:%{label}<br>Frequency: %{value:0.4s}<br>Percentage: %{percent:0.2f}%",
+        hovertemplate="Label:%{label}<br>Frequency: %{value:0.4s}<br>Percentage: %{percent}",
         marker=dict(line=dict(color='#000000', width=0.5)),
         pull=pulls,
     )
