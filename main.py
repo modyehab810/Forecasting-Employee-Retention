@@ -43,7 +43,7 @@ def run():
     # Function To Load Our Dataset
     @st.cache_data
     def load_the_model(model_path):
-        return pd.read_pickle(model_path, compression='infer')
+        return pd.read_pickle(model_path)
         
     df = load_data("HR_comma_sep.csv")
 
